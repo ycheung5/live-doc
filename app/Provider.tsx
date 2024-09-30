@@ -18,13 +18,11 @@ const Provider = ({ children }: { children: ReactNode }) => {
                 return users;
             }}
             resolveMentionSuggestions={async ({ text, roomId }) => {
-                const roomUsers = await getDocumentUsers({
+                return await getDocumentUsers({
+                    currentUser: clerkUser?.emailAddresses[0].emailAddress as string,
                     roomId,
-                    currentUser: clerkUser?.emailAddresses[0].emailAddress!,
                     text,
-                });
-
-                return roomUsers
+                })
             }}
         >
             <ClientSideSuspense fallback={<Loader/>}>

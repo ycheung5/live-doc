@@ -214,8 +214,6 @@ export function createDOMRange(
     }
 
     if (
-        anchorNode === undefined ||
-        focusNode === undefined ||
         anchorDOM === null ||
         focusDOM === null
     ) {
@@ -245,7 +243,7 @@ export function createDOMRange(
     try {
         range.setStart(anchorDOM, anchorOffset);
         range.setEnd(focusDOM, focusOffset);
-    } catch (e) {
+    } catch {
         return null;
     }
 

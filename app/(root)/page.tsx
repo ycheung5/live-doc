@@ -39,7 +39,7 @@ const Home = async () => {
                     </div>
                     <ul className={"document-ul"}>
                         {
-                            roomDocuments.data.map(({ id, metadata, createdAt }:any) => (
+                            roomDocuments.data.map(({ id, metadata: {title}, createdAt }:never) => (
                                 <li key={id} className={"document-list-item"}>
                                     <Link href={`/documents/${id}`} className={"flex flex-1 items-center gap-4"}>
                                         <div className={"hidden rounded-md bg-dark-500 p-2 sm:block"}>
@@ -51,7 +51,7 @@ const Home = async () => {
                                             />
                                         </div>
                                         <div className={"space-y-1"}>
-                                            <p className={"line-clamp-1 text-lg"}>{metadata.title}</p>
+                                            <p className={"line-clamp-1 text-lg"}>{title}</p>
                                             <p className={"text-sm font-light text-blue-100"}>
                                                 Created at {dateConverter(createdAt)}
                                             </p>

@@ -5,7 +5,6 @@ import {liveblocks} from "@/lib/liveblocks";
 import {RoomAccesses} from "@liveblocks/node";
 import {revalidatePath} from "next/cache";
 import {getAccessType, parseStringify} from "@/lib/utils";
-import {error} from "lib0";
 import {redirect} from "next/navigation";
 
 export const createDocument = async ({ userId, email }: CreateDocumentParams) => {
