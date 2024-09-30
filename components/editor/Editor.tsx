@@ -18,7 +18,7 @@ import {
   useEditorStatus
 } from "@liveblocks/react-lexical";
 import Loader from "@/components/Loader";
-import FloatingToolbar from "@/components/editor/plugins/FloatingToolbar";
+import FloatingToolbarPlugin from "@/components/editor/plugins/FloatingToolbarPlugin";
 import {useThreads} from "@liveblocks/react/suspense";
 import Comments from "@/components/Comments";
 import {DeleteModal} from "@/components/DeleteModal";
@@ -63,7 +63,7 @@ export function Editor({ roomId, currentUserType }: {roomId: string; currentUser
                     placeholder={<Placeholder/>}
                     ErrorBoundary={LexicalErrorBoundary}
                 />
-                {currentUserType === 'editor' && (<FloatingToolbar/>)}
+                {currentUserType === 'editor' && (<FloatingToolbarPlugin/>)}
                 <HistoryPlugin/>
                 <AutoFocusPlugin/>
               </div>
